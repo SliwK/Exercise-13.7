@@ -1,5 +1,5 @@
 var fs = require('fs');
-var StatMode = require('stat-mode');
+//var StatMode = require('stat-mode');
 var colors = require('colors');
 /*
 fs.stat('./cat.jpg', function(err, stats) {
@@ -39,7 +39,7 @@ fs.readFile('./text.txt', 'utf-8', function(err, data) {
 
 //polecenie - utworz plik i zapisz w nim strukturę katalogu
 
-
+/* odczytanie kalatogu i zapisanie go w pliku
 fs.readdir('c:/', 'utf-8', function(err, data){
   if (err) throw err;
   var catalogs = data;
@@ -48,4 +48,44 @@ fs.readdir('c:/', 'utf-8', function(err, data){
     console.log('Wrote Hello World in file helloworld.txt, just check it');
 
   });
+});
+*/
+/*
+//odczyt plików i tworzenie jednego jako
+
+fs.readFile('./doc_files/tekst_1.txt', 'utf-8', function(err, data) {
+    if (err) throw err;
+    var text = data;
+    fs.writeFile('./sum.txt', text, 'utf-8', function(err) {
+        if (err) throw err;
+        console.log('Zapisano 1!'.blue);
+        fs.readFile('./doc_files/tekst_2.txt', 'utf-8', function(err, data) {
+              if (err) throw err;
+              var text = data;
+              fs.appendFile('./sum.txt', text, 'utf-8', function(err) {
+                  if (err) throw err;
+                  console.log('Zapisano 2!'.blue);
+                  fs.readFile('./doc_files/tekst_3.txt', 'utf-8', function(err, data) {
+                      if (err) throw err;
+                      var text = data;
+                      fs.appendFile('./sum.txt', text, 'utf-8', function(err) {
+                          if (err) throw err;
+                          console.log('Zapisano 3!'.blue);
+                      });
+                  });
+              });
+          });
+      });
+});
+*/
+
+//odczytanie i przekształcenie obrazka.
+
+var Jimp = require("jimp");
+
+Jimp.read("./cat.jpg", function (err, cat) {
+    if (err) throw err;
+    cat.greyscale();
+    cat.mirror( true, false );
+    cat.write("./cat-1.jpg");
 });

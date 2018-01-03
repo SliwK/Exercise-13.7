@@ -1,0 +1,1 @@
+2. Je¿eli w ciele funkcji s¹ odwo³ania do zewnêtrznych zmiennych, brane s¹ one z zewnêtrznego œrodowiska.

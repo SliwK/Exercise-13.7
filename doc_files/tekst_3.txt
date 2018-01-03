@@ -1,0 +1,1 @@
+3. Funkcje maj¹ dostêp do zmiennych z zewn¹trz. ALE zewnêtrzne œrodowisko nie ma dostêpu do zmiennych wewn¹trz funkcji.

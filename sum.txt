@@ -1,0 +1,1 @@
+1 .Gdy funkcja zaczyna dzia�a�, zaczyna tworzy� swoje w�asne zmienne (parametry funkcji i te, kt�re s� zdefiniowane w jej ciele).2. Je�eli w ciele funkcji s� odwo�ania do zewn�trznych zmiennych, brane s� one z zewn�trznego �rodowiska.3. Funkcje maj� dost�p do zmiennych z zewn�trz. ALE zewn�trzne �rodowisko nie ma dost�pu do zmiennych wewn�trz funkcji.

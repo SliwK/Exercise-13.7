@@ -1,0 +1,1 @@
+1 .Gdy funkcja zaczyna dzia³aæ, zaczyna tworzyæ swoje w³asne zmienne (parametry funkcji i te, które s¹ zdefiniowane w jej ciele).
