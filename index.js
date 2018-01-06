@@ -50,8 +50,64 @@ fs.readdir('c:/', 'utf-8', function(err, data){
   });
 });
 */
+
+//odczyt plików i tworzenie jednego - OPCJA Z readFileSync()
+var path = './doc_files/';
+fs.readdir(path, 'utf8', function(err, files){
+  if(err) throw err;
+  var filePath = [];
+  var content = [];
+//  console.log(files);
+  for (var i = 0; i < files.length; i++) {
+    filePath[i] = 'doc_files/' + files[i];
+  }
+//    console.log(filePath);
+
+  for (x = 0; x < filePath.length; x++) {
+    content[x] = fs.readFileSync(filePath[x], "utf8");
+
+  }
+  console.log(content);
+
+fs.writeFile('./sum.txt', content, function(err){
+        if (err) throw err;
+        console.log("Zapisano plik sum.txt");
+    });
+
+});
+
+
 /*
-//odczyt plików i tworzenie jednego jako
+fs.readFileSync('./doc_files/tekst_1.txt', 'utf-8', function(err, data) {
+    if (err) throw err;
+    var text = data;
+    fs.writeFile('./sum.txt', text, 'utf-8', function(err) {
+        if (err) throw err;
+        console.log('Zapisano 1!'.blue);
+        fs.readFile('./doc_files/tekst_2.txt', 'utf-8', function(err, data) {
+              if (err) throw err;
+              var text = data;
+              fs.appendFile('./sum.txt', text, 'utf-8', function(err) {
+                  if (err) throw err;
+                  console.log('Zapisano 2!'.blue);
+                  fs.readFile('./doc_files/tekst_3.txt', 'utf-8', function(err, data) {
+                      if (err) throw err;
+                      var text = data;
+                      fs.appendFile('./sum.txt', text, 'utf-8', function(err) {
+                          if (err) throw err;
+                          console.log('Zapisano 3!'.blue);
+                      });
+                  });
+              });
+          });
+      });
+});
+
+
+
+
+/*
+//odczyt plików i tworzenie jednego - OPCJA Z readFile()
 
 fs.readFile('./doc_files/tekst_1.txt', 'utf-8', function(err, data) {
     if (err) throw err;
@@ -79,13 +135,15 @@ fs.readFile('./doc_files/tekst_1.txt', 'utf-8', function(err, data) {
 });
 */
 
+/*
 //odczytanie i przekształcenie obrazka.
 
 var Jimp = require("jimp");
 
 Jimp.read("./cat.jpg", function (err, cat) {
     if (err) throw err;
-    cat.greyscale();
-    cat.mirror( true, false );
-    cat.write("./cat-1.jpg");
+    cat.greyscale()
+       .mirror( true, false )
+       .write("./cat-1.jpg");
 });
+*/
